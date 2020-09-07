@@ -1,0 +1,2 @@
+# edabit-exercises
+Javascript practice
