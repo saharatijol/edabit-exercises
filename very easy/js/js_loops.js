@@ -121,9 +121,9 @@ function squaresSum(n) {
 function filterArray(arr) {
   let intArray = [];
   for (let i = 0; i < arr.length; i++) {
-    if (typeof(arr[i]) === 'number') {
+    if (typeof(arr[i]) === 'number' && Number.isInteger(arr[i])) {
       //console.log(arr[i]);
-      intArray.push(parseInt(arr[i]));
+      intArray.push(arr[i]);
       //console.log (intArray);
     }
   }
@@ -132,4 +132,136 @@ function filterArray(arr) {
 //filterArray(["A", 0, "Edabit", 1729, "Python", "1729"])
 //filterArray(["Nothing", "here"])
 
+// TODO: Create a function that adds a string ending to each member in an array.
+// *  Examples:
+// *  addEnding(["clever", "meek", "hurried", "nice"], "ly")
+// *  ➞ ["cleverly", "meekly", "hurriedly", "nicely"]
+// *  addEnding(["new", "pander", "scoop"], "er")
+// *  ➞ ["newer", "panderer", "scooper"]
+// *  addEnding(["bend", "sharpen", "mean"], "ing")
+// *  ➞ ["bending", "sharpening", "meaning"]
 
+function addEnding(arr, ending) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(arr[i] + ending)
+  }
+  return newArr
+}
+//addEnding(["clever", "meek", "hurried", "nice"], "ly")
+
+// TODO: Create a function that takes a number (from 1 - 60) and returns a corresponding string of hyphens.
+// *  Examples
+// *  Go(1) ➞ "-"
+// *  Go(5) ➞ "-----"
+// *  Go(3) ➞ "---"
+
+function go(num) {
+  let str = "";
+  for (let i = 0; i < num; i++) {
+    str += '-';
+    //console.log(str)
+  }
+  return str
+}
+//go(11);
+
+// TODO: Create a function that takes an array of numbers. Return the largest number in the array.
+// * Examples:
+// * findLargestNum([4, 5, 1, 3]) ➞ 5
+// * findLargestNum([300, 200, 600, 150]) ➞ 600
+// * findLargestNum([1000, 1001, 857, 1]) ➞ 1001
+
+function findLargestNum(num) {
+  //console.log (Math.max(...num));
+  return Math.max(...num);
+}
+//findLargestNum([300, 200, 600, 150])
+
+// TODO: In this exercise you will have to.
+// TODO: Take a list of names.
+// TODO: Add "Hello" to every name.
+// TODO: Make one big string with all greetings.
+// TODO: The solution should be one string with a comma in between every "Hello (Name)".
+// *  Examples:
+// *  greetPeople(["Joe"]) ➞ "Hello Joe"
+// *  greetPeople(["Angela", "Joe"]) ➞ "Hello Angela, Hello Joe"
+// *  greetPeople(["Frank", "Angela", "Joe"]) ➞ "Hello Frank, Hello Angela, Hello Joe"
+
+function greetPeople(names) {
+  let newArr = [];
+  for (let i = 0; i < names.length; i++) {
+    newArr.push(`Hello ${names[i]}`)
+  }
+  return newArr.join(', ');
+}
+//greetPeople(["Frank", "Angela", "Joe"])
+
+// TODO: Write a function that returns true if all integers in an array are factors of a number, and false otherwise.
+// *  Examples:
+// *  checkFactors([2, 3, 4], 12) ➞ true
+//    Since 2, 3, and 4 are all factors of 12.
+// *  checkFactors([1, 2, 3, 8], 12) ➞ false
+//    8 is not a factor of 12.
+// *  checkFactors([1, 2, 50], 100) ➞ true
+// *  checkFactors([3, 6], 9) ➞ false
+
+function checkFactors(factors, num) {
+  for (let i = 0; i < factors.length; i++) {
+    if (num % factors[i] !== 0) {
+      //console.log(false);
+      return false
+    }
+  }
+  return true
+}
+//checkFactors([1, 2, 50], 100)
+
+// TODO: Write a function that takes an integer and returns a string with the given number of "a"s in Edabit.
+// *  Examples
+// *  howManyTimes(5) ➞ "Edaaaaabit"
+// *  howManyTimes(0) ➞ "Edbit"
+// *  howManyTimes(12) ➞ "Edaaaaaaaaaaaabit"
+
+function howManyTimes(num) {
+  let str = "";
+  for (let i = 0; i < num; i++) {
+    str += 'a'
+  }
+  return `Ed${str}bit`
+}
+//howManyTimes(5)
+
+// TODO: You're in the midst of creating a typing game. Create a function that takes in two arrays: the array of user-typed words, and the array of correctly-typed words and outputs an array containing 1s (correctly-typed words) and -1s (incorrectly-typed words).
+// * Example:
+// * Inputs:
+// * User-typed Array: ["cat", "blue", "skt", "umbrells", "paddy"]
+// * Correct Array: ["cat", "blue", "sky", "umbrella", "paddy"]
+// * Output: [1, 1, -1, -1, 1]
+// * correctStream(
+// *   Examples
+// *   ["it", "is", "find"],
+// *   ["it", "is", "fine"]
+// * ) ➞ [1, 1, -1]
+// * 
+// * correctStream(
+// *   ["april", "showrs", "bring", "may", "flowers"],
+// *   ["april", "showers", "bring", "may", "flowers"]
+// * ) ➞ [1, -1, 1, 1, 1]
+
+function correctStream(user, correct) {
+  let newArr = [];
+  for (let i = 0; i < user.length; i++) {
+    //console.log(user[i] === correct[i]);
+    if (user[i] !== correct[i]) {
+      newArr.push(-1);
+    }
+    else if (user[i] === correct[i]){
+      newArr.push(1);
+    }
+  }
+  console.log(newArr)
+  return newArr
+}
+//correctStream(["april", "showrs", "bring", "may", "flowers"],["april", "showers", "bring", "may", "flowers"])
+//correctStream(["starry", "wind", "skies"], ["starry", "wind", "skies"])
