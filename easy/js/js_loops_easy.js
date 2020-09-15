@@ -198,5 +198,16 @@ function beer() {
 
   function fibonacciGenerator(n) {
     var valueArr = [];
-    for (var i = 0; i < )
+    var sum = 0;
+    if (n % 2 === 0) {
+      valueArr.push(n)
+      console.log(valueArr)
+    }
+    else {
+      valueArr.push(n);
+      console.log(valueArr)
+    }
+      
   }
+
+  fibonacciGenerator(3);
