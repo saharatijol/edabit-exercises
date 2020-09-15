@@ -152,4 +152,51 @@ function reverseCase(str) {
 // *    ["hello", "world"]
 // *  ]) ➞ []
 
+// TODO: Replicate this using while loop
+// * 99 bottles of beer on the wall.
+// * 99 bottles of beer, take one down pass it around.
+// * 98 bottles of beer on the wall.
+// * 98 bottles of beer on the wall.
+// * 98 bottles of beer, take one down pass it around.
+// * 97 bottles of beer on the wall.
+// * .......... etc until 0 bottles
 
+function beer() {
+  var bottles = 99;
+  
+  while (bottles > 0) {
+    if (bottles === 1) {
+      console.log(`Only ${bottles} bottle of beer on the wall, ${bottles} bottle of beer.`)
+      bottles--;
+      console.log(`Take one down and pass it around, no more bottle of beer`)
+    }
+    else if (bottles === 2){
+      console.log(`There are ${bottles} bottles of beer on the wall, ${bottles} bottles of beer.`)
+      bottles--;
+      console.log(`Take one down and pass it around, ${bottles} bottle of beer on the wall.`)
+    }
+    else {
+      console.log(`There are ${bottles} bottles of beer on the wall, ${bottles} bottles of beer.`)
+      bottles--;
+      console.log(`Take one down and pass it around, ${bottles} bottles of beer on the wall.`)
+    }
+  }
+  }
+  //beer();
+
+  // TODO: Fibonacci Exercise: 
+  // * Fibonacci was an Italian mathematician who camp up with the Fibonacci sequence:
+  // * 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144 etc.
+  // * Where every number is the sum of the previous ones.
+  // * e.g. 0, 1, 1, 2, 3, 5 comes from:
+  // * 0 + 1 = 1
+  // * 1 + 1 = 2
+  // * 1 + 2 = 3
+  // * 2 + 3 = 5 ... etc
+  // TODO: Create a function where you can call it by writing the code: fibonacciGenerator(n) Where n os the number of items in the sequence. So we should call fibonacciGenerator(3) and get
+  // * [0, 1, 1] as the output. You should return an array as output
+
+  function fibonacciGenerator(n) {
+    var valueArr = [];
+    for (var i = 0; i < )
+  }
